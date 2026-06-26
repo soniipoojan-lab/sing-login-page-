@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Profiles</title>
+  <link rel="stylesheet" href="cssfile/profiles.css">
+
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div>
+      <h2>
+        All Profiles
+        <span class="badge" id="total-badge">...</span>
+      </h2>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="back-btn" onclick="window.location.href='/index'">← Back to Form</button>
+      <button class="logout-btn" onclick="logout()"style="background-color: black; color:white; padding:10px 20px; border:none;margin-top: 20px; margin-left: 0px; border-radius:5px; cursor:pointer;"">Logout</button>
+    </div>
+  </div>
+ <div class="page-size">
+        <label for="rows-per-page">Rows per page:</label>
+        <select id="rows-per-page" onchange="changeRowsPerPage(this.value)">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+      </div>
+  <div class="search-row">
+    <input type="text" id="search" placeholder="Search by name, email or country…" oninput="applyFiltersAndSort()" />
+    <div class="controls">
+      <label>Sort:</label>
+      <select id="sort-field" onchange="applyFiltersAndSort()">
+        <option value="id">#</option>
+        <option value="name">Name</option>
+        <option value="email">Email</option>
+        <option value="country">Country</option>
+        <option value="created_at">Saved on</option>
+      </select>
+      <select id="sort-order" onchange="applyFiltersAndSort()">
+        <option value="asc">Asc</option>
+        <option value="desc">Desc</option>
+      </select>
+      <label>Country:</label>
+      <select id="country-filter" onchange="applyFiltersAndSort()">
+        <option value="">All</option>
+      </select>
+      <button id="export-csv" class="export-btn" onclick="exportCSV()">Export CSV</button>
+      <button id="export-json" class="export-btn" onclick="exportJSON()">Export JSON</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Password</th>
+          <th>Country</th>
+          <th>State</th>
+          <th>Saved on</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <!-- Rows injected by JS below -->
+        <tr class="state-row">
+          <td colspan="8">
+            <div class="spinner"></div><br>Loading profiles…
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination-row">
+      <div class="pagination-controls">
+        <button id="page-prev" onclick="changePage(-1)">Previous</button>
+        <span id="page-info">Page 1 of 1</span>
+        <button id="page-next" onclick="changePage(1)">Next</button>
+      </div>
+      
+    </div>
+    <div class="foot" id="foot"></div>
+  </div>
+
+</div>
+ <script src="javascript/profiles.js"></script>
+</body>
+</html>

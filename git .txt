@@ -1,0 +1,28 @@
+init means :-start git inside the folder
+echo means :-print a text -- echo can print variables also -- not only text 
+>>  :- append data into file 
+.md :- Markdown file.---GitHub automatically shows README on the repository page.
+
+
+
+ if u can  sigle or multiple files and all files  save in GitHub page  so write like this 
+
+  git  add  README.md 
+  git add index.html style.css app.js
+  git add .
+
+-M:-- messaeg  ---:- example:-git commit -m "Added Login Page
+Initial Commit
+Added Login Page
+Added Signup
+Fixed Login Error
+Updated UI
+Added API
+Removed Bug
+Updated CSS
+Refactor Code
+
+main:-product code 
+add :- add means new remote connection 
+push :- sned local code to GitHub
+-u :-set upstream 

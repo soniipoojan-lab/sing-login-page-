@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="cssfile/loginn.css">
+ 
+
+
+
+
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email or Username</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email or username"
+                    required
+                    autocomplete="username"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password"
+                />
+            </div>
+
+            <div class="form-group">
+                <label><input type="checkbox" id="remember" name="remember"> Remember me</label>
+            </div>
+
+            <button type="submit" class="login-btn">
+                <span class="btn-text">Login</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+
+        <button type="button" class="back-btn" onclick="window.location.href='/index'" style="background-color: #764ba2; color:white; padding:10px 20px; border:none;margin-top: 20px; margin-left: 80px; border-radius:5px; cursor:pointer;">Back to Register</button>
+
+        <div id="message" class="message"></div>
+
+        <div class="form-footer">
+            <p>Use any registered user email and password to login.</p>
+        </div>
+    </div>
+
+    
+    <script src="javascript/loginn.js"></script>
+</body>
+</html>
